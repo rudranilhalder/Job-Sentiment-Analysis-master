@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Description Box</title>
+    <link rel="stylesheet" href="/static/css/job_description_analyze.css">
+</head>
+<body>
+
+    <div class="container">
+        <a id="welcomeLink" href="#"><img src="\static\css\logo.png" alt="Clickable Image" class="logo-img"></a>
+        <div class="job-description-box">
+            <form action="{{ url_for('analyze') }}" method="POST">
+            <textarea class="no-resize-drag" id="searchbox" name="job_description" spellcheck="true" autocorrect="true" placeholder="Enter Job Description Here..." autofocus=""></textarea>
+       
+            <button type="submit" class="analyze-button">Analyze</button>
+            </form>
+        </div>
+    </div>
+    <p id="flag" style="display: none;">{{ flag }}</p>
+    <script>
+        var condition = true;
+        var welcomeLink = document.getElementById('welcomeLink');
+        var welcomeUrl="{{ url_for('welcome') }}"
+        var flag = document.getElementById("flag").textContent;
+        if(flag==0){
+            welcomeUrl="{{ url_for('welcome') }}"
+        }
+        else
+        {
+            welcomeUrl="{{ url_for('welcomeloggedin') }}"
+        }
+        welcomeLink.setAttribute('href', welcomeUrl);
+        
+
+    </script>
+</body>
+</html>

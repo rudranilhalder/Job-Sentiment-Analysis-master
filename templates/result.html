@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatibility" content="IE-edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>CSS SNAP EFFECT</title>
+    <link rel="stylesheet" href="/static/css/result.css">
+</head>
+
+<body>
+    <div class="container">
+      <a id="welcomeLink" href="#"><img src="\static\css\logo.png" alt="Clickable Image" class="logo-img"></a>
+        <section class="one" id="section-one">
+            <div class="emoji-container">
+                <span class="emoji" id="emoji"></span>
+                <div class="positive" id="sentiment">{{ result[0].label }}: <span style="color: black;">{{ result[0].score }}</span></div>
+                <div class="description-box">
+                    {{ name }}
+                </div>
+            </div>
+            <div class="scroll-down-container">
+              <div class="scroll-down-text">Scroll down for more information</div>
+                <div class="scroll-down-icon"></div>
+            </div>
+        </section>
+        <section class="two" id="next-section">
+          <div class="card-container">
+          <div class="card">
+            <div class="card-image">
+              <img src="/static/css/job_title.jpg">
+            </div>
+            <h2>Job Title</h2>
+            <p> {{ job_title }}</p>
+        </div>
+        <div class="card">
+            <div class="card-image">
+              <img src="/static/css/key_responsibilities.jpg">
+            </div>
+            <h2>Key Responsibilities</h2>
+            <p>{{ key_responsibilities }}</p>
+        </div>
+        <div class="card">
+            <div class="card-image">
+              <img src="/static/css/qualifications.jpg">
+            </div>
+            <h2>Qualifications</h2>
+            <p> {{ qualifications }}</p>
+        </div>
+      </div>
+
+      <div class="card-container2">
+        <div class="card">
+          <div class="card-image">
+            <img src="/static/css/skills_required.jpg">
+          </div>
+          <h2>Skills Required</h2>
+          <p> {{ skills_required }}</p>
+      </div>
+      <div class="card">
+          <div class="card-image">
+            <img src="/static/css/job_location.jpg">
+          </div>
+          <h2>Job Location</h2>
+          <p> {{ job_location }}</p>
+      </div>
+      <div class="card">
+          <div class="card-image">
+            <img src="/static/css/salary.jpg">
+          </div>
+          <h2>Salary</h2>
+          <p> {{ salary }}</p>
+      </div>
+    </div>
+      
+        </section>
+    </div>
+    <p id="flag" style="display: none;">{{ flag }}</p>
+
+    <script>
+      function updateEmoji(sentiment) {
+          var emoji = document.getElementById('emoji');
+          var sentimentElement = document.getElementById('sentiment');
+          if (sentiment === 'POSITIVE') {
+              emoji.textContent = '😀';
+              sentimentElement.style.color = 'green';
+          } else if (sentiment === 'NEGATIVE') {
+              console.log(sentiment);
+              emoji.textContent = '😞';
+              sentimentElement.style.color = 'red';
+          }
+      }
+      var scrollDownIcon = document.querySelector('.scroll-down-icon');
+      scrollDownIcon.addEventListener('click', function() {
+          scrollToSection('next-section');
+      });
+
+      function scrollToSection(sectionId) {
+          var section = document.getElementById(sectionId);
+          section.scrollIntoView({ behavior: 'smooth' });
+      }
+
+     
+  
+      // Call the function with the initial sentiment value
+      updateEmoji('{{ result[0].label }}');
+      
+      var welcomeLink = document.getElementById('welcomeLink');
+        var welcomeUrl="{{ url_for('welcome') }}"
+        var flag = document.getElementById("flag").textContent;
+        if(flag==0){
+            welcomeUrl="{{ url_for('welcome') }}"
+        }
+        else
+        {
+            welcomeUrl="{{ url_for('welcomeloggedin') }}"
+        }
+        welcomeLink.setAttribute('href', welcomeUrl);
+  
+  </script>
+</body>
+</html>

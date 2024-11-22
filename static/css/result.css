@@ -1,0 +1,224 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+ }
+
+ @keyframes pop-up {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+}
+
+ section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+
+ }
+
+.card-container{
+  margin-top: -500px;
+  height: 350px;
+  display: flex;
+}
+
+.card-container2{
+  margin-top: 300px;
+  height: 350px;
+  margin-left: -1050px;
+  display: flex;
+}
+ h1{
+    color: rgb(226,226,226);
+    text-shadow: 1px 1px 4px #000;
+ }
+
+ .one {
+    background: linear-gradient(to right,  #c7c5e4, #91b0ea, #babaf9, #c7d7f4);
+ }
+ .two {
+    background: linear-gradient(to right,  #c7c5e4, #91b0ea, #babaf9, #c7d7f4);
+    display: flex;
+}
+.three {
+    background: linear-gradient(to right,  #c7c5e4, #91b0ea, #babaf9, #c7d7f4);
+}
+.four {
+    background: linear-gradient(to right,  #c7c5e4, #91b0ea, #babaf9, #c7d7f4);
+}
+
+.emoji-container {
+    text-align: center;
+    font-size: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: pop-up 2s ease-in-out;
+  }
+
+  .emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  
+  .positive {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .positive-after {
+    font-size: 50px;
+    color: black;
+  }
+
+  @media (max-width: 768px) {
+    .emoji-container {
+      font-size: 50px;
+    }
+    .positive {
+      font-size: 25px;
+    }
+    .positive::after {
+      font-size: 25px;
+    }
+    .description-box {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+
+  .description-box {
+    width: 800px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    margin-top: 45px;
+  }
+
+  .scroll-down-container {
+    position: absolute;
+    bottom: 20px;
+    margin-top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  
+  .scroll-down-text {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .scroll-down-icon {
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .scroll-down-icon:hover {
+    transform: translateY(-5px);
+  }
+  .animate {
+    animation: moveDown 0.3s linear infinite;
+  }
+  
+  @keyframes moveDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @media (max-width: 768px) {
+    .scroll-down-text {
+        font-size: 12px;
+    }
+  
+    .scroll-down-icon {
+        width: 25px;
+        height: 25px;
+    }
+  }
+
+  .card {
+    background: rgb(62, 62, 62);
+    color: white;
+    width: 250px;
+    height: 350px;
+    margin: 50px;
+    border-radius: 15px;
+    margin-bottom: 420px;
+    text-align: center;
+    
+}
+
+.card-image {
+  background-color: white;
+  height: 110px;
+  margin-bottom: 15px;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-image img {
+  width: 60%; /* Ensure the logo takes the full width of the container */
+  height: 60%; /* Ensure the logo takes the full height of the container */
+  object-fit: contain;/* Maintain aspect ratio and cover the entire container */
+  border-radius: 15px 15px 0 0; /* Inherit the border-radius from the parent */
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.card h2 {
+  padding: 10px;
+}
+
+.card p {
+  padding: 10px;
+}
+
+.card:hover{
+  background-color: rgb(62, 62, 62);
+  color: white;
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all 1s ease;
+}
+
+.logo-img {
+  width: 100px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  position: absolute;
+  top: 40px;
+  left: 50px; /* Adjust the left position as needed */
+  z-index: 1;
+  cursor: pointer;
+  border: 2px solid #000;/* Ensure the image is above other elements */
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="/static/css/welcome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar"> 
+            <a href="{{ url_for('welcome') }}"><img src="\static\css\logo.png" alt="Clickable Image" class="logo-img"></a>
+           
+            
+            <div class="icon">
+                
+              <!--  <h2 class="logo">welcome </h2> -->
+            </div>
+
+           <!-- <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>-->
+
+             <!--<div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+             </div>
+            -->
+        </div> 
+        <div class="content">
+            
+            <h1>JOB <br><span>SENTIMENT</span> <br>ANALYZER</h1>
+            <p class="par">Welcome to the job sentiment analyzer!.
+             <br>Our website is your go to destination
+             <br> for analyzing job description and have 
+             <br> realtime insights into the job market </p>
+
+                <button class="cn"><a href="{{ url_for('job_description') }}">GET STARTED</a></button>
+
+                <div class="form">
+                    <form action="{{ url_for('login') }}" method="POST">
+                    <input type="text" required id="emailInputL" required name="emaill" placeholder="Enter Email/Username Here">
+                    <input type="password" required id="passwordInputL" required name="passwordl" placeholder="Enter Password Here">
+                    <div class="checkbox">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                    </div>
+                    <div class="RememberMe">
+                    <p>Remember Me</p>
+                    </div>
+                    <button type="submit" class="btnn" id="login">Login</button>
+                </form>
+
+                    <p class="link">Don't have an account?<br>
+                    <a href="#">Sign up </a></p>
+                    <!--
+                    <p class="liw">Log in with</p>
+                    
+                    
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>-->
+
+                </div>
+                <div class="form" style="display: none;">
+                    <!-- Registration Form Placeholder -->
+                    <form action="{{ url_for('register') }}" method="POST">
+                    <input type="text" required id="usernameInputR" required name="usernamer" placeholder="Enter Username Here">
+                    <input type="email" required id="emailInputR" required name="emailr" placeholder="Enter Email Here">
+                    <input type="password" required id="passwordInputR" required name="passwordr" placeholder="Enter Password Here">
+                    <button type="submit" class="btnn" >Register</button>
+                    </form>
+                    <p class="linkl">Already have an account?<br>
+                        <a href="#">Log In </a></p>
+                </div>
+                    </div>
+                </div>
+                <p id="userexists" style="display: none;">{{ userexists }}</p>
+                <p id="userexists2" style="display: none;">{{ userexists2 }}</p>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const emailInput = document.getElementById("emailInputL");
+        const passwordInput=document.getElementById("passwordInputL")
+        
+        const usernameInputR=document.getElementById("usernameInputR");
+        const emailInputR = document.getElementById("emailInputR");
+        const passwordInputR=document.getElementById("passwordInputR")
+   
+   
+   // Add an event listener to handle the placeholder behavior when the input is focused
+   usernameInputR.addEventListener("focus", function () {
+       // Clear the placeholder text when the input is focused
+       usernameInputR.placeholder = "";
+   });
+   
+   emailInput.addEventListener("focus", function () {
+       // Clear the placeholder text when the input is focused
+       emailInput.placeholder = "";
+   });
+   
+   emailInputR.addEventListener("focus", function () {
+       // Clear the placeholder text when the input is focused
+       emailInputR.placeholder = "";
+   });
+   
+   passwordInput.addEventListener("focus", function () {
+       // Clear the placeholder text when the input is focused
+       passwordInput.placeholder = "";
+   });
+   
+   passwordInputR.addEventListener("focus", function () {
+       // Clear the placeholder text when the input is focused
+       passwordInputR.placeholder = "";
+   });
+   
+   // Add an event listener to handle the placeholder behavior when the input is blurred (loses focus)
+   usernameInputR.addEventListener("blur", function () {
+       // Restore the placeholder text if the input is empty
+       if (usernameInputR.value === "") {
+           usernameInputR.placeholder = "Enter Username Here";
+       }
+   });
+   
+   emailInput.addEventListener("blur", function () {
+       // Restore the placeholder text if the input is empty
+       if (emailInput.value === "") {
+           emailInput.placeholder = "Enter Email Here";
+       }
+   });
+   
+   emailInputR.addEventListener("blur", function () {
+       // Restore the placeholder text if the input is empty
+       if (emailInputR.value === "") {
+           emailInputR.placeholder = "Enter Email Here";
+       }
+   });
+   passwordInput.addEventListener("blur", function () {
+       // Restore the placeholder text if the input is empty
+       if (passwordInput.value === "") {
+           passwordInput.placeholder = "Enter Password Here";
+       }
+   });
+   
+   passwordInputR.addEventListener("blur", function () {
+       // Restore the placeholder text if the input is empty
+       if (passwordInputR.value === "") {
+           passwordInputR.placeholder = "Enter Password Here";
+       }
+   });
+           // Get the "Sign Up" link element
+           const signUpLink = document.querySelector('.link a');
+           const LoginLink = document.querySelector('.linkl a');
+       
+           // Get the "Login" and "Register" forms
+           const loginForm = document.querySelector('.form');
+           const registerForm = document.querySelector('.form[style="display: none;"]');
+       
+           // Add a click event listener to the "Sign Up" link
+           signUpLink.addEventListener('click', function (e) {
+               e.preventDefault(); // Prevent the default link behavior
+       
+               // Toggle the display property of the forms
+               if (loginForm.style.display === 'block') {
+                   loginForm.style.display = 'none';
+                   registerForm.style.display = 'block';
+               } else {
+                   loginForm.style.display = 'none';
+                   registerForm.style.display = 'block';
+               }
+           });
+           
+           LoginLink.addEventListener('click', function (e) {
+               e.preventDefault(); // Prevent the default link behavior
+       
+               // Toggle the display property of the forms
+               if (registerForm.style.display === 'block') {
+                   registerForm.style.display = 'none';
+                   loginForm.style.display = 'block';
+               } else {
+                   registerForm.style.display = 'none';
+                   loginForm.style.display = 'block';
+               }
+           });
+       
+        var userexists = document.getElementById("userexists").textContent;
+        var userexists2 = document.getElementById("userexists2").textContent;
+
+        if (userexists === "True") {
+            console.log(userexists)
+            window.alert("Username/Email already exist.Please try again");
+        }
+        else if(userexists === "False")
+        {
+            console.log(userexists)
+            window.alert("User registered successfully");
+        }
+        if(userexists2 === "False")
+        {
+            console.log(userexists2)
+            window.alert("Incorrect Username/Email or Password. Please try again");
+        }
+
+
+        // When the page loads, if the URL contains a parameter 'userexists'
+        // Show the modal
+        
+       </script>
+    
+</body>
+</html> 

@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(job3.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px; /* Adjust width as needed */
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.logo{
+    background-color: #fff;
+    opacity: 0.5;
+    color: #000000;
+    width: 185px;
+    height: 60px;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-left: 15%;
+   
+}
+
+.menu{
+   /* background: #3a4c78;*/
+    opacity: 0.5;
+    width: 650px;
+    float: left;
+    height: 70px;
+    margin-left:3%; 
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #00f2ff;
+}
+
+.search{
+    width: 330px;
+    float: left;
+    margin-left: 900px;
+    margin-top: -65px;
+}
+
+.srch{
+    font-family: 'Times New Roman';
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #00f2ff;
+    margin-top: 13px;
+    color: #fff;
+    border-right: none;
+    font-size: 16px;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    background: #006eff;
+    border: 2px solid #006eff;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+
+.content{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: #ffffff;
+    position: relative;
+    top: 50px;
+}
+
+.content .par{
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    margin-top: 4%;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 2%;
+    letter-spacing: 2px;
+}
+
+.content .cn{
+    width: 160px;
+    height: 50px;
+    background:#0191ff;
+    border: none;
+    margin-bottom: 10px;
+    margin-top:10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+    
+}
+
+.content .cn a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: .3s ease;
+    font-weight:bold;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+}
+.cn2 {
+    width: 160px;
+    height: 50px;
+    background:#0191ff;
+    border: none;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: .4s ease;
+    text-decoration: none;
+    color: #ffffff;
+    transition: .3s ease;
+    font-weight:bold;
+}
+.cn2 a {
+    text-decoration: none;
+    color: inherit; /* or specify your desired color */
+}
+
+.card {
+    background: rgb(62, 62, 62);
+    color: white;
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    margin-left: 850px;
+    border-radius: 15px;
+    margin-top: 20px;
+    text-align: center;
+
+    
+}
+
+.card p {
+    padding: 10px;
+  }
+
+/*.cn:hover{
+    background-color: #fff;
+}
+*/
+
+.content span{
+    color: #ffffff;
+    font-size: 65px
+}
+
+.form{
+    width: 250px;
+    height: 400px;
+    background: linear-gradient(to top, rgb(32, 31, 72)40%,rgba(24, 36, 84, 0.985)50%);
+    position: absolute;
+    top: 35px;
+    left: 950px;
+    transform: translate(0%,-5%);
+    border-radius: 10px;
+    padding: 25px;
+    
+}
+
+
+
+
+
+.form h2{
+    width: 220px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #3700ff;
+    font-size: 22px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+
+.form input{
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 3px solid #06bdff;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.form .pass
+
+{
+
+margin-top: 15%;
+
+}
+
+.form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+
+.btnn{
+    width: 240px;
+    height: 40px;
+    background: #0091ff;
+    border: none;
+    margin-top:40px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+}
+/*.btnn:hover{
+    background: #fff;
+    color: #0026ff;
+}*/
+.btnn a{
+    text-decoration: none;
+    color: #eee8e8;
+    font-weight: bold;
+
+   
+}
+.form .link {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 15px;
+
+}
+.form .link a{
+    text-decoration: none;
+    color: #00fafa;
+ 
+
+}
+
+.form .linkl {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 15px;
+
+}
+.form .linkl a{
+    text-decoration: none;
+    color: #00fafa;
+ 
+
+}
+
+
+.liw{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 25px ;
+
+}
+.icons a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.icons ion-icon{
+    color: #fff;
+    font-size: 30px;
+    padding-left: 14px;
+    padding-top: 5px;
+    transition: 0.3s ease;
+    margin-top:15px;
+}
+.icons ion-icon:hover{
+    color: #4400ff;
+} 
+.form .checkbox {
+    margin-top: -20px; /* Add spacing below the password input */
+    display: flex; /* Display the checkbox and label in a row */
+    align-items: center; /* Vertically center the checkbox and label */
+    font-family: sans-serif;
+}
+
+.form .checkbox input[type="checkbox"] {
+    margin-right: 5px; /* Add some spacing between the checkbox and label */
+}
+.form .RememberMe {
+    margin-top: -27px; /* Add spacing below the password input */
+    display: flex; /* Display the checkbox and label in a row */
+    align-items: center; /* Vertically center the checkbox and label */
+    font-family: sans-serif;
+    margin-left: 24px;
+}
+.logo-img {
+    width: 100px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    position: absolute;
+    top: 20px;
+    left: 160px; /* Adjust the left position as needed */
+    z-index: 1;
+    cursor: pointer;
+    border: 2px solid #000;/* Ensure the image is above other elements */
+}
+
+
+
+
+
+
+
+
+
